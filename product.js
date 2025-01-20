@@ -59,3 +59,97 @@
 
 //7. typeof operator
 // typeof
+
+
+
+// const firstfunc = () =>{
+//     console.log('First function');
+    
+//     const secondfunc =() =>{
+//         console.log('Second function');
+//     }
+//     return secondfunc;
+// }
+
+// const closure = firstfunc();
+// console.log('closure:',closure);
+// closure();
+
+
+// const incrementdecrement = () =>{
+//     let count = 0;
+//     return {
+//         increment: () =>{
+//             count++;
+//         },
+//         decrement: () =>{
+//             count--;
+//         },
+//         getCount: () =>{
+//             return count;
+//         }
+//     }
+// }
+
+// const counter = incrementdecrement();
+// console.log(counter.getCount());
+// counter.increment();
+// console.log(counter.getCount());
+// counter.decrement();
+// console.log(counter.getCount());
+
+
+// const sum=(x,y,callback) =>{
+//     let temp = x+y;
+//     callback(temp);
+// }
+
+// let add = sum (10,20,(s)=>{
+//     console.log('Sum:',s);
+// });
+
+// const fetchdata = (callback) =>{
+//     let data = 'Data from server';
+
+//     if (false){
+//         callback('Error occured',null);}
+//     else{
+//         callback(null,data);
+//     }
+// }
+
+// fetchdata((err,data)=>{
+//     if (err){
+//         console.log('Error:',err);
+//     }
+//     else{
+//         console.log('Data:',data);
+//     }
+// });
+
+
+//promise
+//pending,resolved,rejected
+
+const newpromise = new Promise((resolve,reject)=>{
+    let data = 'data from server';
+    console.log('resolve:',resolve);
+    console.log('reject:',reject);
+    if (data){
+        resolve(data);
+    }
+    else{
+        reject('Error occured');
+    }
+});
+
+newpromise
+.then((data)=>{
+    console.log('Data:',data);
+})
+.catch((err)=>{
+    console.log('Error:',err);
+})
+.finally(()=>{
+    console.log('promise done');
+});
